@@ -1,6 +1,21 @@
 import os
 from PIL import Image
 
+# -----------------------------------------------------------------
+# PVA-01
+# Script to reformat the images to 10x10 pixels and convert them to
+# binary black and white images
+# Directory structure:
+# PVA-01
+#  - Bilder
+#    - squares
+#    - processed
+#  - reformat.py
+#  - Datensatz-matthias.heimberg.csv
+# this script uses the processed images from the generate.py script
+# -----------------------------------------------------------------
+
+
 # path to the directory with the images
 img_path = "Bilder/squares/"
 

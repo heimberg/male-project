@@ -2,6 +2,19 @@ import cv2
 import numpy as np
 import os
 
+# -----------------------------------------------------------------
+# PVA-01
+# Script to extract symbols from a hand drawn raw image
+# the script needs to be run in the same directory as the raw image
+# Directory structure:
+# PVA-01
+#  - Bilder
+#    - raw-symbols.png
+#    - squares
+#    - symbols
+#  - generate.py
+# -----------------------------------------------------------------
+
 # Load the image
 img = cv2.imread("Bilder/raw-symbols.png")
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)

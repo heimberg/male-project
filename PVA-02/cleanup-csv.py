@@ -11,12 +11,16 @@ def substitute(symbol):
     return symbol
 
 # "normalize" to 1
-def substitute(number):
+def substitute_numbers(number):
     if number == "255":
         return "1"
     elif number == "True":
         return "1"
     elif number == "False":
+        return "0"
+    elif number == "1.0":
+        return "1"
+    elif number == "0.0":
         return "0"
     else:
         return number
@@ -46,7 +50,7 @@ for filename in os.listdir(input_dir):
         for i in range(len(lines)):
             columns = lines[i].split(",")
             for j in range(len(columns)):
-                columns[j] = substitute(columns[j])
+                columns[j] = substitute_numbers(columns[j])
             lines[i] = ",".join(columns)
         with open(input_dir + filename, "w") as output_file:
             output_file.writelines(lines)
@@ -73,6 +77,3 @@ for filename in os.listdir(input_dir):
         # write modified files to output directory
         with open(output_dir + filename, "w") as output_file:
             output_file.writelines(lines)
-
-                    
-                    
